@@ -1,5 +1,5 @@
 # kmprn
-Hacker New Kawe a.k.a abal-abal :)
+the Hacker News Kawe a.k.a abal-abal :)
 
 # boilerplate
 Create-React-App

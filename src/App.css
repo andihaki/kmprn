@@ -1,0 +1,40 @@
+#root {
+  margin: 0 5px;
+}
+.newslist {
+  display: flex;
+  line-height: 24px;
+  white-space: nowrap;
+  margin: 10px 0;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid #e3e3e3;
+}
+
+.news > a{
+  padding: 0 3px;
+}
+
+.edit-news {
+
+}
+
+input.input-news {
+  width: 98%;
+}
+
+textarea.input-news {
+  width: 98%;
+  height: 50px;
+}
+
+.buttonMore {
+  background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}

@@ -13,6 +13,7 @@ function NewsEdit(props) {
     let test = props.news.filter( news => news.slug === props.match.params.objectID )
 
     let dummySubmit = e => {
+      //stinky tricks :)
       const dummyTitle = document.querySelector(".dummyTitle").value
       const dummyContent = document.querySelector(".dummyContent").value
 
@@ -27,7 +28,7 @@ function NewsEdit(props) {
     if (test.length > 0) {
     return (
       <div>
-        <h1>Edit {test[0].title}</h1>
+        <h2>Edit > {test[0].title}</h2>
         <hr/>
         <form className='edit-news'onSubmit={ e => dummySubmit(e)} >
           <label>

@@ -10,7 +10,6 @@ import { connect } from "react-redux";
 
 class App extends Component {
   componentDidMount(){
-    //const page = this.props.page || 0
     this.props.getNews(this.props.page)
     //console.log(this)
   }

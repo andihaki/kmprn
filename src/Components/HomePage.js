@@ -3,29 +3,25 @@ import { Link } from 'react-router-dom'
 
 import { deleteNews } from '../actions/newsAction'
 
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
-
-//import { NewsEdit } from './index';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 function HomePage(props) {
-  //console.log(typeof props.news === 'undefined' ? "oops" : props);
-  //console.log("HomePage", props)
+  //console.log('HomePage', props)
 
-  //stinky tricks :)
-  //if (props.match.url === "/" || props.match.url === "//"|| props.match.url === "/read") props.match.url = "read/"
   if (typeof props.news !== 'undefined') {
+    const listItems = props.news.map((data) =>
+      <li key={data.objectID} className='newslist news'>
+        <Link to={props.match.url + 'edit/' + data.slug}>Edit</Link>
+        <Link to='' onClick={(e) => (window.confirm("Delete news "+data.title) === true) ? props.deleteNews(data.objectID) : e.preventDefault()}>
+        Delete
+        </Link>
+        <Link to={props.match.url +'read/'+ data.slug}>{data.title}</Link>
+      </li>
+    );
     return (
-      props.news.map( data => {
-        return (
-          <li key={data.objectID} className="newslist news">
-            <Link to={props.match.url + "edit/" + data.slug}>Edit</Link>
-            <Link to="" onClick={() => props.deleteNews(data.objectID)}>Delete</Link>
-            <Link to={props.match.url +"read/"+ data.slug}>{data.title}</Link>
-          </li>
-        )
-      })
-    )
+    <ul>{listItems}</ul>
+  );
   }
   return <p>Loading...</p>
 }
